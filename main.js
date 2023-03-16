@@ -22,10 +22,6 @@ class Character {
   }
 }
 
-
-
-
-
 compareHeight = (characterOne, characterTwo) => {
   if (characterOne.height > characterTwo.height) {
     return `${characterOne.name} is taller than ${characterTwo.name}`;
@@ -93,7 +89,6 @@ let header = document.querySelector("header");
 let main = document.querySelector("main");
 let footer = document.querySelector("footer");
 
-
 header.style.display = "none";
 main.style.display = "none";
 footer.style.display = "none";
@@ -106,9 +101,7 @@ let getCharacterData = async (url) => {
 };
 
 let showData = async () => {
-  
-  
-    const characterUrls = [
+  const characterUrls = [
     "https://swapi.dev/api/people/1/",
     "https://swapi.dev/api/people/4/",
     "https://swapi.dev/api/people/3/",
@@ -135,18 +128,16 @@ let showData = async () => {
     characters.push(character);
   }
 
-
   let characterOneList = document.querySelector("#characterOneList");
   let dropDownCharacterOne = document.querySelector("#dropDownCharacterOne");
   let compareBtns = document.querySelector("#compareButton");
   let horiLine = document.querySelector("#horiLine");
   compareBtns.style.display = "none";
-    horiLine.style.display = "none";
-    loading.style.display = "none";
-    header.style.display = "flex";
-    main.style.display = "flex";
-    footer.style.display = "flex";
-
+  horiLine.style.display = "none";
+  loading.style.display = "none";
+  header.style.display = "flex";
+  main.style.display = "flex";
+  footer.style.display = "flex";
 
   dropDownCharacterOne.addEventListener("change", function () {
     let selectedOption =
@@ -177,8 +168,6 @@ let showData = async () => {
     let pictureTwo =
       dropDownCharacterTwo.options[dropDownCharacterTwo.selectedIndex].value;
 
-
-
     characters.forEach((character) => {
       if (character.name === selectedOption1) {
         characterTwoList.innerHTML = `<p class="characterName">${character.name}</p>
@@ -189,11 +178,7 @@ let showData = async () => {
   });
 
   compareButton.addEventListener("click", function () {
-    if (
-      dropDownCharacterOne.value &&
-      dropDownCharacterTwo.value
-    ) {
-        
+    if (dropDownCharacterOne.value && dropDownCharacterTwo.value) {
       let selectedOption =
         dropDownCharacterOne.options[dropDownCharacterOne.selectedIndex]
           .innerHTML;
@@ -211,8 +196,6 @@ let showData = async () => {
       let str = character.gender;
       let upperCase1 = str.charAt(0).toUpperCase() + str.slice(1);
 
-      console.log(character);
-      console.log(characterTwo);
       characters.forEach((character) => {
         if (character.name === selectedOption) {
           compareOneList.innerHTML = `<p>Name: ${character.name}</p>
@@ -228,19 +211,16 @@ let showData = async () => {
         }
       });
 
-
       if (characterTwo.gender === "n/a") {
-          console.log("hej")
-          characterTwo.gender = "Unknown";
-          }
+        console.log("hej");
+        characterTwo.gender = "Unknown";
+      }
       let str2 = characterTwo.gender;
       let upperCase = str2.charAt(0).toUpperCase() + str2.slice(1);
 
-     
       if (characterTwo.hairColor === "none") {
         characterTwo.hairColor = "Bold";
-        }
-
+      }
 
       characters.forEach((characterTwo) => {
         if (characterTwo.name === selectedOptionTwo) {
@@ -258,18 +238,18 @@ let showData = async () => {
         compareBtns.style.display = "grid";
       });
 
-
-      
       let compareResult = document.querySelector("#compareResult");
       character.mass = parseInt(character.mass);
-        characterTwo.mass = parseInt(characterTwo.mass);
-        character.height = parseInt(character.height);
-        characterTwo.height = parseInt(characterTwo.height);
-      
-      
+      characterTwo.mass = parseInt(characterTwo.mass);
+      character.height = parseInt(character.height);
+      characterTwo.height = parseInt(characterTwo.height);
+
       let compareButton = document.querySelector("#compareButton");
       compareButton.addEventListener("click", function () {
-        compareResult.innerHTML = `<li>${compareHeight(character, characterTwo)}</li>
+        compareResult.innerHTML = `<li>${compareHeight(
+          character,
+          characterTwo
+        )}</li>
         <li>${compareMass(character, characterTwo)}</li>
         <li>${compareHairColor(character, characterTwo)}</li>
         <li>${compareSkinColor(character, characterTwo)}</li>
@@ -277,9 +257,7 @@ let showData = async () => {
         <li>${compareMovies(character, characterTwo)}</li>
         `;
       });
-
-    } 
-    
+    }
     else {
       alert("Please select two characters");
     }
