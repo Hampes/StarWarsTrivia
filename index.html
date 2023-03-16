@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Star Wars Trivia</h1>
+    </header>
+    <h2 class="loading"></h2>
+    <main>
+      <div id="divWrapper">
+        <div class="divCharacter">
+          <div class="selectDiv">
+            <label for="dropDownCharacterOne">Character 1:</label>
+            <select id="dropDownCharacterOne">
+              <option class="options" value="" selected disabled>
+                Select a character
+              </option>
+              <option class="options" value="LukeSkywalker.png">
+                Luke Skywalker
+              </option>
+              <option class="options" value="R2D2.png">R2-D2</option>
+              <option class="options" value="HanSolo.png">Han Solo</option>
+              <option class="options" value="Chewbacca.png">Chewbacca</option>
+              <option class="options" value="ObiWan.png">Obi-Wan Kenobi</option>
+              <option class="options" value="Yoda.png">Yoda</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="divCharacter">
+          <div class="selectDiv">
+            <label for="dropDownCharacterTwo">Character 2:</label>
+            <select id="dropDownCharacterTwo">
+              <option class="options" value="" selected disabled>
+                Select a character
+              </option>
+              <option class="options" value="DarthVader.png">
+                Darth Vader
+              </option>
+              <option class="options" value="R2D2.png">R2-D2</option>
+              <option class="options" value="HanSolo.png">Han Solo</option>
+              <option class="options" value="Chewbacca.png">Chewbacca</option>
+              <option class="options" value="ObiWan.png">Obi-Wan Kenobi</option>
+              <option class="options" value="Yoda.png">Yoda</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button id="compare-button">Show info</button>
+
+      <div class="characterListWrapper">
+        <div id="characterOneList"></div>
+        <div id="compareOneList" class="compareList"></div>
+      </div>
+
+      <div id="horiLine"></div>
+
+      <div class="characterListWrapper">
+        <div id="characterTwoList"></div>
+        <div id="compareTwoList" class="compareList"></div>
+      </div>
+      <ul id="compareResult"></ul>
+
+      <button id="compareButton">Compare characters</button>
+
+      <button id="reset-button">Reset</button>
+    </main>
+
+    <footer>
+      <p>Star Wars Character Battle</p>
+    </footer>
+  </body>
+</html>
